@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="MR LASER - مس لايزر | شريكك الصناعي">
+    <title>MR LASER | مس لايزر - تواصل معنا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1c1c1c;
+            --gold: #d4af37;
+            --gold-bright: #e8c458;
+            --white: #ffffff;
+            --text-light: #c9c9c9;
+            --text-mid: #8a8a8a;
+            --border-gold: rgba(212, 175, 55, 0.5);
+        }
+
+        html, body { min-height: 100%; }
+
+        body {
+            background:
+                radial-gradient(circle at 20% 0%, #1a1a1a 0%, transparent 55%),
+                radial-gradient(circle at 80% 100%, #151515 0%, transparent 55%),
+                linear-gradient(160deg, #0a0a0a 0%, #050505 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .card {
+            max-width: 720px;
+            width: 100%;
+            background: linear-gradient(180deg, #141414 0%, #0f0f0f 100%);
+            border-radius: 36px;
+            box-shadow:
+                0 40px 80px -30px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(212, 175, 55, 0.12) inset,
+                0 0 60px rgba(212, 175, 55, 0.05);
+            padding: 34px 22px 26px;
+            position: relative;
+            overflow: hidden;
+            animation: cardIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.7;
+        }
+
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @media (min-width: 640px) {
+            .card { padding: 50px 44px 36px; border-radius: 42px; }
+        }
+
+        /* ============ قسم اللوجو ============ */
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-wrapper {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto 22px;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            box-shadow:
+                0 20px 40px -18px rgba(212, 175, 55, 0.25),
+                0 0 0 1px rgba(212, 175, 55, 0.2);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+            background: #000000;
+            aspect-ratio: 1 / 1;
+        }
+
+        .logo-wrapper:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow:
+                0 28px 55px -18px rgba(212, 175, 55, 0.4),
+                0 0 0 1px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000000;
+        }
+
+        /* Placeholder يظهر إذا لم توجد الصورة */
+        .logo-fallback {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            color: var(--gold);
+            background: #000;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        .logo-fallback .fb-icon {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .logo-fallback .fb-text {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+
+        /* ============ شبكة التواصل ============ */
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--bg-card);
+            border-radius: 22px;
+            padding: 13px 16px;
+            box-shadow:
+                0 6px 16px -8px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 255, 255, 0.04);
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            text-decoration: none;
+            color: var(--white);
+            cursor: pointer;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(212, 175, 55, 0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+            box-shadow:
+                0 16px 30px -14px rgba(0, 0, 0, 0.9),
+                0 0 0 1px var(--border-gold);
+        }
+
+        .contact-item:hover::after { opacity: 1; }
+        .contact-item:active { transform: translateY(0); }
+
+        .contact-item.static { cursor: default; }
+        .contact-item.static:hover {
+            transform: none;
+            background: var(--bg-card);
+            box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+        }
+        .contact-item.static:hover::after { opacity: 0; }
+
+        .icon-circle {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #1f1f1f, #141414);
+            box-shadow:
+                0 0 0 1px rgba(212, 175, 55, 0.2) inset,
+                0 2px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .contact-item:hover .icon-circle {
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow:
+                0 0 0 1px rgba(212, 175, 55, 0.5) inset,
+                0 4px 12px rgba(212, 175, 55, 0.15);
+        }
+
+        .icon-circle svg { width: 22px; height: 22px; display: block; stroke: var(--gold); }
+
+        .label {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .main-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            word-break: break-word;
+            line-height: 1.35;
+        }
+
+        .value.ltr {
+            direction: ltr;
+            text-align: right;
+            font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+            color: var(--gold-bright);
+        }
+
+        .value.arabic {
+            direction: rtl;
+            text-align: right;
+            font-weight: 500;
+            font-size: 0.94rem;
+            color: var(--text-light);
+        }
+
+        .arrow {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            opacity: 0.5;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .arrow svg { width: 18px; height: 18px; }
+
+        .contact-item:hover .arrow { opacity: 1; transform: translateX(-3px); }
+        .contact-item.static .arrow { opacity: 0.15; }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            margin: 22px 0 14px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--text-mid);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            direction: ltr;
+            font-weight: 500;
+        }
+
+        @media (max-width: 380px) {
+            .card { padding: 26px 16px 20px; border-radius: 28px; }
+            .logo-wrapper { max-width: 220px; }
+            .value { font-size: 0.92rem; }
+            .icon-circle { width: 42px; height: 42px; border-radius: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+
+        <!-- ========== اللوجو ========== -->
+        <div class="logo-section">
+            <div class="logo-wrapper">
+                <!-- الصورة تُقرأ من ملف logo.png في نفس المجلد -->
+                <img
+                    src="logo.png"
+                    alt="MR LASER - مس لايزر"
+                    class="logo-img"
+                    id="logoImg"
+                    onerror="handleLogoError()"
+                >
+                <!-- Placeholder بديل في حال عدم وجود الصورة -->
+                <div class="logo-fallback" id="logoFallback">
+                    <div class="fb-icon">🖼️</div>
+                    <div class="fb-text">لم يتم العثور على logo.png</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== شبكة التواصل ========== -->
+        <div class="contact-grid">
+
+            <!-- 1. الهاتف — الرقم الأول -->
+            <a href="tel:01009598676" class="contact-item" aria-label="اتصل بالرقم 01009598676">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">الهاتف</span>
+                    <span class="value ltr">01009598676</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 2. الهاتف — الرقم الثاني -->
+            <a href="tel:01091905725" class="contact-item" aria-label="اتصل بالرقم 01091905725">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">الهاتف</span>
+                    <span class="value ltr">01091905725</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 3. واتساب -->
+            <a href="https://wa.me/201009598676" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="تواصل عبر واتساب">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        <path d="M16.5 13.5c-.3-.15-1.7-.85-2-.95-.3-.1-.5-.15-.7.15-.2.3-.8.95-.95 1.15-.15.2-.3.22-.6.07a8.2 8.2 0 0 1-2.4-1.48 9 9 0 0 1-1.65-2.05c-.17-.3 0-.46.13-.6.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.7-1.68-.95-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.13 4.53.72.3 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">واتساب</span>
+                    <span class="value ltr">01009598676</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 4. فيسبوك -->
+            <a href="https://www.facebook.com/MRLASEER" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="صفحتنا على فيسبوك">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">فيسبوك</span>
+                    <span class="value ltr">MRLASEER</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 5. الموقع الإلكتروني -->
+            <a href="https://MRLASERCO.COM" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="موقعنا الإلكتروني">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">الموقع الإلكتروني</span>
+                    <span class="value ltr">MRLASERCO.COM</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 6. البريد الإلكتروني -->
+            <a href="mailto:MAIL@MRLASERCO.COM" class="contact-item" aria-label="راسلنا عبر البريد الإلكتروني">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 6-10 7L2 6"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">البريد الإلكتروني</span>
+                    <span class="value ltr">MAIL@MRLASERCO.COM</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 7. العنوان -->
+            <div class="contact-item static" aria-label="عنوان الشركة">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div class="label">
+                    <span class="main-label">العنوان</span>
+                    <span class="value arabic">كفر الشيخ، مركز فوه، طريق فوه دسوق أمام بنزينة أبو السعد.</span>
+                </div>
+                <div class="arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+        <div class="footer-note">MR LASER &nbsp;·&nbsp; CNC</div>
+
+    </main>
+
+    <script>
+        // في حال عدم العثور على logo.png، أظهر البديل
+        function handleLogoError() {
+            var img = document.getElementById('logoImg');
+            var fallback = document.getElementById('logoFallback');
+            if (img) img.style.display = 'none';
+            if (fallback) fallback.style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
